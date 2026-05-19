@@ -27,8 +27,11 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    testIdAttribute: 'data-test',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    launchOptions: {
+      args: ['--disable-save-password-bubble', '--disable-password-leak-detection'],
+    },
     trace: 'on-first-retry',
   },
 

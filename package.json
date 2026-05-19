@@ -6,13 +6,25 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report",
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint \"**/*.ts\"",
+    "check": "prettier --check \"**/*.ts\""
+  },
   "dependencies": {
     "@types/node": "^25.7.0",
-    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0"
+    "@playwright/test": "^1.60.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.10.2",
+    "prettier": "^3.8.3"
   }
 }
