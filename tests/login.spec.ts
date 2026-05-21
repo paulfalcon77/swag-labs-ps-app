@@ -1,12 +1,11 @@
 import { test } from '@playwright/test';
 import { LoginPage } from '../pom/pages/LoginPage';
-import { EXTRA_USERS } from "../data/users";
+import { EXTRA_USERS } from '../data/users';
 
 const PASSWORD = process.env.PASSWORD!;
 const USERNAME = process.env.USER_NAME!;
 
 test.describe('Login Tests', () => {
-
   test('Check for sigh in swag labs', async ({ page }) => {
     const loginPage = new LoginPage(page); // инициализируем прямо внутри
     await loginPage.open();
@@ -41,7 +40,6 @@ test.describe('Login Tests', () => {
     await loginPage.login('locked_out_user', 'secret_sauce');
     await loginPage.checkErrorMessageText();
   });
-
 });
 // npx playwright test -g "Login Tests" --project=chromium
 // npx playwright test -g 'Check for sigh in swag labs' --project=chromium --debug
