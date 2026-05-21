@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pom/pages/loginPage';
+import { LoginPage } from '../pom/pages/LoginPage';
 import { EXTRA_USERS } from "../data/users";
 
 const PASSWORD = process.env.PASSWORD!;

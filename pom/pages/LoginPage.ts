@@ -2,6 +2,7 @@ import { BasePage } from '../base/BasePage';
 import { SERVICE_URL } from '../../config/env-data';
 import { Page, Locator, expect } from '@playwright/test';
 import { Button } from '../atom/Button';
+import { InventoryPage } from './InventoryPage';
 
 export class LoginPage extends BasePage {
   readonly url: string = SERVICE_URL;
@@ -52,8 +53,8 @@ export class LoginPage extends BasePage {
     return this; // back to LoginPage
   }
 
-  async checkSuccessfulLogin(): Promise<this> {
+  async checkSuccessfulLogin(): Promise<InventoryPage> {
     await expect(this.page).toHaveURL(/.*inventory.html/);
-    return this;
+    return new InventoryPage(this.page);
   }
 }
